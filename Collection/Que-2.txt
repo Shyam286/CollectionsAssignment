@@ -1,0 +1,25 @@
+package com.collection.assignment;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Collection_2 {
+	public static void main(String[] args) {
+		HashSet<String> hs=new HashSet<>();
+		hs.add("Laptop");
+		hs.add("Mobile");
+		hs.add("Charger");
+		hs.add("PS5");
+		hs.add("Earphone");
+		hs.add("Headphone");
+		hs.add("Printer");
+		hs.add("Keyboard");
+		hs.add("Mouse");
+		hs.add("Tablet");
+		
+		Iterator it=hs.iterator();
+		while(it.hasNext()) {
+		System.out.println(it.next());
+		}
+	}
+}

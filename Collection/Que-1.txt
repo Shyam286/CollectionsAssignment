@@ -1,0 +1,74 @@
+package com.collection.assignment;
+
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Collection_1 {
+	public static void main(String[] args) {
+		
+		
+	  Contact c1=new Contact("shyam","sh@gmail.com",Gender.Male);
+	  Contact c2=new Contact("Pratik","pr@gmail.com",Gender.Male);
+	  Contact c3=new Contact("Pallavi","pl@gmail.com",Gender.Female);
+	  Contact c4=new Contact("Neha","ne@gmail.com",Gender.Female);
+	  Contact c5=new Contact("Pushpak","pu@gmail.com",Gender.Male);
+
+	  TreeMap<Long, Contact> tm=new TreeMap<>();
+	  
+	  tm.put(91234567l,c1);
+	  tm.put(54234567l,c2);
+	  tm.put(84334567l,c3);
+	  tm.put(64634567l,c4);
+	  tm.put(24434567l,c5);
+	  
+	  Set<Map.Entry<Long,Contact>> entryset=tm.entrySet();
+	 for(Map.Entry<Long, Contact> es: entryset) {
+		 System.out.println("Key : Phone Number: "+es.getKey()+" Value: "+es.getValue());
+	 }
+	}
+
+}
+enum Gender{
+	Male,Female
+}
+class Contact implements Comparable<Contact>{
+ 	private Long phNumber;
+	private String name;
+	private String email;
+	private Gender gender;
+	
+	public Contact( String name, String email, Gender gender) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.gender = gender;
+	}
+	public Long getPhNumber() {
+		return phNumber;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public Gender getGender() {
+		return gender;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Contact [name=" + name + ", email=" + email + ", gender=" + gender + "]";
+	}
+	@Override
+	public int compareTo(Contact o) {
+		// TODO Auto-generated method stub
+		return o.getPhNumber().compareTo(this.getPhNumber());
+	}
+	
+	
+	
+}

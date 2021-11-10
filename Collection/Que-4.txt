@@ -1,0 +1,28 @@
+package com.collection.assignment;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Collection_4 {
+	public static void main(String[] args) {
+		
+	List<LocalDate> l=new LinkedList<>();
+	l.add(LocalDate.of(1998,Month.MAY,28));
+	l.add(LocalDate.of(1994,Month.APRIL,14));
+	l.add(LocalDate.of(1999,Month.AUGUST,5));
+	l.add(LocalDate.of(1996,Month.DECEMBER,3));
+	
+	for(LocalDate ld: l) {
+		if(ld.isLeapYear()) {
+			System.out.println("Your Date of birth is "+ld+" and it was leap year.");
+		}
+		else
+		{
+			System.out.println("Your Date of birth is "+ld+" and it was not leap year.");
+
+		}
+	}
+	}
+
+}
